@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://delecmofkykty"]
+
+[ext_resource type="Script" uid="uid://bho67txc6qnkt" path="res://common/interactions/mouse_interactor.gd" id="1_yw30f"]
+[ext_resource type="Script" uid="uid://bd23hjofbgpfw" path="res://addons/states/state_machine.gd" id="2_qjkh3"]
+[ext_resource type="Script" uid="uid://dmc3553syciul" path="res://player/states/player_idle_state.gd" id="3_g6k8r"]
+[ext_resource type="Script" uid="uid://buoc4kyeed0yc" path="res://player/states/player_interact_state.gd" id="4_boad6"]
+
+[node name="Player" type="Node3D" unique_id=872856807]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1906497528]
+transform = Transform3D(1, 0, 0, 0, 0.92377144, 0.38294435, 0, -0.38294435, 0.92377144, 0, 1.6221588, 0.93738663)
+current = true
+
+[node name="MouseInteractor" type="Node3D" parent="." unique_id=1282010624 node_paths=PackedStringArray("camera")]
+script = ExtResource("1_yw30f")
+camera = NodePath("../Camera3D")
+target_layer = 16
+metadata/_custom_type_script = "uid://bho67txc6qnkt"
+
+[node name="StateMachine" type="Node" parent="." unique_id=506265911 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_qjkh3")
+initial_state = NodePath("PlayerIdleState")
+metadata/_custom_type_script = "uid://bd23hjofbgpfw"
+
+[node name="PlayerIdleState" type="Node" parent="StateMachine" unique_id=1818859217 node_paths=PackedStringArray("interact_state")]
+script = ExtResource("3_g6k8r")
+interact_state = NodePath("../PlayerInteractState")
+metadata/_custom_type_script = "uid://dmc3553syciul"
+
+[node name="PlayerInteractState" type="Node" parent="StateMachine" unique_id=615084697 node_paths=PackedStringArray("player_camera", "interactor", "idle_state")]
+script = ExtResource("4_boad6")
+player_camera = NodePath("../../Camera3D")
+interactor = NodePath("../../MouseInteractor")
+idle_state = NodePath("../PlayerIdleState")
+metadata/_custom_type_script = "uid://buoc4kyeed0yc"

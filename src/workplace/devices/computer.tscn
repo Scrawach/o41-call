@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dqwgvhqja4eh5"]
+
+[ext_resource type="Script" uid="uid://cfbym15y65yi" path="res://common/interactions/interaction_area_3d.gd" id="1_bvspc"]
+[ext_resource type="Script" uid="uid://t0vwb2ptwq2n" path="res://common/interactions/device_interaction.gd" id="2_m3cae"]
+[ext_resource type="Script" uid="uid://e36ps533t5aw" path="res://common/interactions/material_override_interaction.gd" id="3_7ep48"]
+[ext_resource type="Material" uid="uid://c4ht5iki6or8w" path="res://common/interactions/hover_overlay_material.tres" id="4_ny0ho"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eiqrc"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dgfsc"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Computer" type="Node3D" unique_id=245178674]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1578458367]
+mesh = SubResource("BoxMesh_eiqrc")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2107445411]
+transform = Transform3D(-8.940697e-08, 0, 1, 0, 1, 0, -1, 0, -8.940697e-08, 0.595, 0, 0)
+
+[node name="InteractionArea3D" type="Area3D" parent="." unique_id=1995101027 node_paths=PackedStringArray("state")]
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+monitorable = false
+script = ExtResource("1_bvspc")
+state = NodePath("../DeviceInteraction")
+metadata/_custom_type_script = "uid://cfbym15y65yi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=177552092]
+shape = SubResource("BoxShape3D_dgfsc")
+
+[node name="DeviceInteraction" type="Node" parent="." unique_id=1825989715 node_paths=PackedStringArray("desired_camera", "area")]
+script = ExtResource("2_m3cae")
+desired_camera = NodePath("../Camera3D")
+area = NodePath("../InteractionArea3D")
+metadata/_custom_type_script = "uid://t0vwb2ptwq2n"
+
+[node name="MaterialOverrideInteraction" type="Node" parent="." unique_id=320159072 node_paths=PackedStringArray("interaction", "mesh")]
+script = ExtResource("3_7ep48")
+hover_material = ExtResource("4_ny0ho")
+interaction = NodePath("../InteractionArea3D")
+mesh = NodePath("../MeshInstance3D")
+metadata/_custom_type_script = "uid://e36ps533t5aw"

@@ -1,0 +1,47 @@
+[gd_resource type="Theme" format=3 uid="uid://cssn1p1dxinea"]
+
+[ext_resource type="FontFile" uid="uid://bm4qh31edg80b" path="res://characters/assets/fonts/Oswald-Medium.ttf" id="1_awt57"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4r2e"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgfsc"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awt57"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8mxs"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_x4r2e")
+Button/styles/normal = SubResource("StyleBoxFlat_dgfsc")
+Label/fonts/font = ExtResource("1_awt57")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_awt57")
+SolidPanelContainer/base_type = &"PanelContainer"
+SolidPanelContainer/styles/panel = SubResource("StyleBoxFlat_t8mxs")

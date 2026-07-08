@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterResource" format=3 uid="uid://rtahaiotoelk"]
+
+[ext_resource type="Script" uid="uid://vkkm85try0h5" path="res://characters/resources/character_data.gd" id="1_2bo15"]
+[ext_resource type="Texture2D" uid="uid://c5nl8d86msfp3" path="res://characters/assets/portraits/face-man-0.png" id="1_yjsr8"]
+
+[resource]
+script = ExtResource("1_2bo15")
+name = "Иванов И. И."
+face = ExtResource("1_yjsr8")
+metadata/_custom_type_script = "uid://vkkm85try0h5"

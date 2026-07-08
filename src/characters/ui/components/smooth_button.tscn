@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d1fxu0kyj4avj"]
+
+[ext_resource type="Theme" uid="uid://cssn1p1dxinea" path="res://characters/ui/monitor_theme.tres" id="1_66t4h"]
+[ext_resource type="Script" uid="uid://648cfq8dunfn" path="res://characters/ui/mouse_hover_color_control.gd" id="1_tiqtx"]
+[ext_resource type="Script" uid="uid://0figg2w48s7v" path="res://characters/ui/components/smooth_button.gd" id="2_wsgnh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfsc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eiqrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okknv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfmc2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kua3"]
+
+[node name="Smooth Button" type="PanelContainer" unique_id=1307462660]
+offset_right = 99.0
+offset_bottom = 33.0
+theme = ExtResource("1_66t4h")
+script = ExtResource("2_wsgnh")
+metadata/_custom_type_script = "uid://0figg2w48s7v"
+
+[node name="Button" type="Button" parent="." unique_id=497437246]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dgfsc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eiqrc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_okknv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rfmc2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2kua3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=378294428]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1210907557]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1292796665]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ПРИНЯТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Hover Background Color" type="Node" parent="." unique_id=1838355452 node_paths=PackedStringArray("mouse_capture", "target")]
+script = ExtResource("1_tiqtx")
+mouse_capture = NodePath("../Button")
+target = NodePath("../Background")
+hover_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://648cfq8dunfn"
+
+[node name="Hover Text Color" type="Node" parent="." unique_id=1275740866 node_paths=PackedStringArray("mouse_capture", "target")]
+script = ExtResource("1_tiqtx")
+mouse_capture = NodePath("../Button")
+target = NodePath("../MarginContainer/Label")
+duration = 0.2
+metadata/_custom_type_script = "uid://648cfq8dunfn"

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d2bdl1nq0q2hu"]
+
+[ext_resource type="Theme" uid="uid://cssn1p1dxinea" path="res://characters/ui/monitor_theme.tres" id="1_g82xd"]
+[ext_resource type="Texture2D" uid="uid://bl5nh1c757502" path="res://characters/assets/gradients/down-top-gradient.tres" id="1_jdneq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfsc"]
+
+[node name="Character Card Socket" type="PanelContainer" unique_id=1683968349]
+modulate = Color(0.8, 0.8, 0.8, 1)
+custom_minimum_size = Vector2(120, 140)
+offset_right = 120.0
+offset_bottom = 140.0
+theme = ExtResource("1_g82xd")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dgfsc")
+
+[node name="Borders" type="PanelContainer" parent="." unique_id=2036350464]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="Borders" unique_id=903539954]
+self_modulate = Color(1, 1, 1, 0.4509804)
+layout_mode = 2
+texture = ExtResource("1_jdneq")
+expand_mode = 1

@@ -31,7 +31,6 @@ grow_begin = 2.0
 grow_end = 2.0
 
 [node name="Mission Monitor" type="Control" unique_id=83216862]
-modulate = Color(0.2484, 0.69, 0.2484, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_2bo15")
+id = "test-char"
 name = "Иванов И. И."
-face = ExtResource("1_yjsr8")
+portrait = ExtResource("1_yjsr8")
 metadata/_custom_type_script = "uid://vkkm85try0h5"

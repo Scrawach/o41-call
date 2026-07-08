@@ -1,11 +1,7 @@
 class_name AutoFillCharactersContainer
 extends HBoxContainer
 
-@export var data: Array[CharacterResource]:
-	set(new_data):
-		data = new_data
-		_sync_visual_with_data()
-
+@export var data: Array[CharacterResource]
 @export var character_card_scene: PackedScene
 
 func _ready() -> void:
@@ -22,3 +18,7 @@ func _sync_visual_with_data() -> void:
 		var instance := character_card_scene.instantiate() as CharacterCard
 		add_child(instance)
 		instance.initialize(item)
+		instance.pressed.connect(_on_pressed)
+
+func _on_pressed(card: CharacterCard) -> void:
+	print("pressed: %s" % card.data.id)

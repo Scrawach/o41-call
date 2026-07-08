@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bttqki5ip44j4"]
+
+[ext_resource type="Script" uid="uid://d00ypqsippjxu" path="res://characters/ui/components/text_ticker.gd" id="1_6dw0e"]
+[ext_resource type="FontFile" uid="uid://cqosnypf5rhtj" path="res://characters/assets/fonts/Oswald-Regular.ttf" id="2_g0iob"]
+
+[node name="Text Ticker" type="Control" unique_id=126669045]
+custom_minimum_size = Vector2(100, 20)
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_6dw0e")
+
+[node name="Label" type="Label" parent="." unique_id=1331724344]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1359.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_g0iob")
+theme_override_font_sizes/font_size = 12
+uppercase = true

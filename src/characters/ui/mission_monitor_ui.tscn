@@ -4,6 +4,8 @@
 [ext_resource type="Theme" uid="uid://cssn1p1dxinea" path="res://characters/ui/monitor_theme.tres" id="1_lrukk"]
 [ext_resource type="PackedScene" uid="uid://pd2xno7e255k" path="res://characters/ui/character_card.tscn" id="1_vkblp"]
 [ext_resource type="Texture2D" uid="uid://mkkqo8klu3vm" path="res://characters/assets/background-cross.png" id="2_llvk3"]
+[ext_resource type="PackedScene" uid="uid://bttqki5ip44j4" path="res://characters/ui/components/text_ticker.tscn" id="2_yjd1a"]
+[ext_resource type="FontFile" uid="uid://cqosnypf5rhtj" path="res://characters/assets/fonts/Oswald-Regular.ttf" id="5_lrukk"]
 [ext_resource type="PackedScene" uid="uid://d2bdl1nq0q2hu" path="res://characters/ui/character_card_socket.tscn" id="6_0vh2y"]
 [ext_resource type="Texture2D" uid="uid://bl5nh1c757502" path="res://characters/assets/gradients/down-top-gradient.tres" id="6_8jx30"]
 [ext_resource type="PackedScene" uid="uid://d1fxu0kyj4avj" path="res://characters/ui/components/smooth_button.tscn" id="6_23w8m"]
@@ -29,6 +31,7 @@ grow_begin = 2.0
 grow_end = 2.0
 
 [node name="Mission Monitor" type="Control" unique_id=83216862]
+modulate = Color(0.2484, 0.69, 0.2484, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,84 +87,96 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fdpvi")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=180120612]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=954304344]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=396337966]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2" unique_id=545486757]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1439814842]
+layout_mode = 2
+alignment = 2
+
+[node name="Text Ticker" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=126669045 instance=ExtResource("2_yjd1a")]
+layout_mode = 2
+text = "В случае обнаружения внутри помещения посторонних, занимающихся заражением стен - нажимайте на красную кнопку и выключайте компьютер. В этот момент электронные приборы могут быть нестабильны. Продолжайте работать и следовать инструкции."
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=825353070]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=394915426]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_lrukk")
+theme_override_font_sizes/font_size = 12
+text = "СВЯЗЬ В НОРМЕ "
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=180120612]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=954304344]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2" unique_id=545486757]
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="Background Map" type="ColorRect" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer" unique_id=476788710]
+[node name="Background Map" type="ColorRect" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer" unique_id=476788710]
 material = SubResource("ShaderMaterial_4ll0r")
 layout_mode = 2
 color = Color(1, 1, 1, 0.41568628)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer" unique_id=2047459275]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer" unique_id=2047459275]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer" unique_id=1803340543]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer" unique_id=1803340543]
 layout_mode = 2
 
-[node name="Setup Character Panel" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer" unique_id=1434699418]
+[node name="Setup Character Panel" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer" unique_id=1434699418]
 layout_mode = 2
 theme_type_variation = &"SolidPanelContainer"
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel" unique_id=1342126627]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel" unique_id=1342126627]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel" unique_id=1337996298]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel" unique_id=2008596159]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel" unique_id=2008596159]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Header Container" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=845712606]
+[node name="Header Container" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=845712606]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_doqtn")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/Header Container" unique_id=1994449435]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/Header Container" unique_id=1994449435]
 self_modulate = Color(1, 1, 1, 0.3019608)
 layout_mode = 2
 texture = ExtResource("6_8jx30")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/Header Container" unique_id=1428253241]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/Header Container" unique_id=1428253241]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/Header Container/MarginContainer" unique_id=351702063]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/Header Container/MarginContainer" unique_id=351702063]
 layout_mode = 2
 text = "УСТРАНЕНИЕ ПОСЛЕДСТВИЙ"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=473145925]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=473145925]
 layout_mode = 2
 theme_override_constants/separation = 3
 theme_override_styles/separator = SubResource("StyleBoxLine_dgfsc")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=849644314]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=849644314]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -169,13 +184,16 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer" unique_id=833992209]
+[node name="Desciprion Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer" unique_id=833992209]
 layout_mode = 2
 size_flags_vertical = 0
-text = "устранить последствия заражения по адресу: ул. ленина, д.5, кв. 4"
+theme_override_fonts/font = ExtResource("5_lrukk")
+text = "устранить последствия заражения
+адрес: ул. ленина, д.5, кв. 4
+время: 01:23"
 uppercase = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=1336282915]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=1336282915]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -183,41 +201,50 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2" unique_id=1732071825]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2" unique_id=1732071825]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=540992085]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=540992085]
 layout_mode = 2
 text = "ГРУППА: [0/4]"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1138936133]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1138936133]
 layout_mode = 2
 
-[node name="Character Card Socket" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1964401191 instance=ExtResource("6_0vh2y")]
+[node name="Character Card Socket" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1964401191 instance=ExtResource("6_0vh2y")]
 layout_mode = 2
 
-[node name="Character Card Socket2" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=316769494 instance=ExtResource("6_0vh2y")]
+[node name="Character Card Socket2" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=316769494 instance=ExtResource("6_0vh2y")]
 layout_mode = 2
 
-[node name="Character Card Socket3" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=483367130 instance=ExtResource("6_0vh2y")]
+[node name="Character Card Socket3" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=483367130 instance=ExtResource("6_0vh2y")]
 layout_mode = 2
 
-[node name="Character Card Socket4" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1437987777 instance=ExtResource("6_0vh2y")]
+[node name="Character Card Socket4" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1437987777 instance=ExtResource("6_0vh2y")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=1090226743]
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=534579487]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer3" unique_id=1090226743]
 layout_mode = 2
 alignment = 1
 
-[node name="Smooth Button2" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/HBoxContainer" unique_id=12982105 instance=ExtResource("6_23w8m")]
+[node name="Accept Button" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=12982105 instance=ExtResource("6_23w8m")]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "назад"
+size_flags_horizontal = 3
+text = "отправить группу"
 
-[node name="Smooth Button3" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/HBoxContainer" unique_id=1307462660 instance=ExtResource("6_23w8m")]
+[node name="Cancel Button" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=1307462660 instance=ExtResource("6_23w8m")]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "принять"
+size_flags_horizontal = 3
+text = "назад"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1177107050]
 layout_mode = 2

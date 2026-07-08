@@ -29,4 +29,4 @@ func _physics_process(delta: float) -> void:
 		label_1.position = label_2.position + Vector2(text_width + spacing, 0)
 	
 	if -label_2.position.x > text_width:
-		label_1.position = label_1.position + Vector2(text_width + spacing, 0)
+		label_2.position = label_1.position + Vector2(text_width + spacing, 0)

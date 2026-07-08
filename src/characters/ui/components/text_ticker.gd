@@ -10,7 +10,8 @@ extends Control
 		label_2.text = new_text
 		
 		text_width = label_1.size.x
-		label_2.position.x = text_width + spacing
+		label_1.position.x = spacing
+		label_2.position.x = label_1.position.x + text_width + spacing
 
 @export var speed: float = 50.0
 @export var spacing: float = 10

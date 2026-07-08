@@ -11,7 +11,7 @@ anchors_preset = 0
 size_flags_horizontal = 3
 script = ExtResource("1_6dw0e")
 
-[node name="Label" type="Label" parent="." unique_id=1331724344]
+[node name="Label1" type="Label" parent="." unique_id=1331724344]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -19,4 +19,16 @@ offset_right = 1359.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_g0iob")
 theme_override_font_sizes/font_size = 12
+text = "text"
+uppercase = true
+
+[node name="Label2" type="Label" parent="." unique_id=1725310100]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1359.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_g0iob")
+theme_override_font_sizes/font_size = 12
+text = "text"
 uppercase = true

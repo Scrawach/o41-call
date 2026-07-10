@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://fs0akq8o2q6y"]
+
+[ext_resource type="Theme" uid="uid://cssn1p1dxinea" path="res://characters/ui/monitor_theme.tres" id="1_8gaqv"]
+[ext_resource type="PackedScene" uid="uid://d1fxu0kyj4avj" path="res://characters/ui/components/smooth_button.tscn" id="2_7s14w"]
+[ext_resource type="Texture2D" uid="uid://bl5nh1c757502" path="res://characters/assets/gradients/down-top-gradient.tres" id="2_rl3l8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eiqrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfsc"]
+
+[node name="Dialogue Panel" type="PanelContainer" unique_id=868862318]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -974.0
+offset_bottom = -453.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8gaqv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1389604445]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="PanelContainer" parent="VBoxContainer" unique_id=1502775554]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eiqrc")
+
+[node name="Label" type="Label" parent="VBoxContainer/Header" unique_id=1872008301]
+layout_mode = 2
+text = "оперативная ситуация"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Header" unique_id=1602497724]
+modulate = Color(1, 1, 1, 0.41960785)
+layout_mode = 2
+texture = ExtResource("2_rl3l8")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1927307052]
+layout_mode = 2
+
+[node name="Body" type="PanelContainer" parent="VBoxContainer" unique_id=1864133680]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dgfsc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Body" unique_id=764218458]
+layout_mode = 2
+text = "на территории сектора с-3 зафиксирована активность объекта"
+
+[node name="Choices" type="VBoxContainer" parent="VBoxContainer" unique_id=1076161677]
+layout_mode = 2
+
+[node name="Smooth Button" parent="VBoxContainer/Choices" unique_id=1307462660 instance=ExtResource("2_7s14w")]
+layout_mode = 2
+text = "1.  Установить соединение"
+
+[node name="Smooth Button2" parent="VBoxContainer/Choices" unique_id=1875962001 instance=ExtResource("2_7s14w")]
+layout_mode = 2
+text = "2.  передать пакет"
+
+[node name="Smooth Button3" parent="VBoxContainer/Choices" unique_id=1820285620 instance=ExtResource("2_7s14w")]
+layout_mode = 2
+text = "3.  ожидать ответа"

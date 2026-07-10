@@ -5,21 +5,27 @@ extends Node
 @export var target: Control
 @export var target_scale: float = 1.05
 @export var duration: float = 0.05
+@export var enabled: bool = true
+
 @export var ease_type: Tween.EaseType
 @export var trans_type: Tween.TransitionType
 
 var hover_tween: Tween
 
 func _ready() -> void:
-	enable()
+	if enabled:
+		enable()
 
 func enable() -> void:
 	mouse_capture.mouse_entered.connect(_on_mouse_entered)
 	mouse_capture.mouse_exited.connect(_on_mouse_exited)
+	enabled = true
 
 func disable() -> void:
 	mouse_capture.mouse_entered.disconnect(_on_mouse_entered)
 	mouse_capture.mouse_exited.disconnect(_on_mouse_exited)
+	enabled = false
+	_on_mouse_exited()
 
 func _on_mouse_entered() -> void:
 	_stop_if_needed()

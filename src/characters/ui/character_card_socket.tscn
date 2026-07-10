@@ -2,32 +2,135 @@
 
 [ext_resource type="Theme" uid="uid://cssn1p1dxinea" path="res://characters/ui/monitor_theme.tres" id="1_g82xd"]
 [ext_resource type="Texture2D" uid="uid://bl5nh1c757502" path="res://characters/assets/gradients/down-top-gradient.tres" id="1_jdneq"]
+[ext_resource type="Script" uid="uid://cmsgehp5kep0q" path="res://characters/ui/character_card_socket.gd" id="2_4du8u"]
+[ext_resource type="Texture2D" uid="uid://c02vs83ygudjj" path="res://characters/assets/icons/close-32px.svg" id="3_0s2ps"]
 [ext_resource type="Texture2D" uid="uid://baqgaht7gt4ou" path="res://characters/assets/icons/person-32px.svg" id="3_awecn"]
+[ext_resource type="Texture2D" uid="uid://c5nl8d86msfp3" path="res://characters/assets/portraits/face-man-0.png" id="4_j1aay"]
+[ext_resource type="Texture2D" uid="uid://b3wp1iii5vn74" path="res://characters/assets/gradients/top-down-gradient.tres" id="5_e1mmn"]
+[ext_resource type="StyleBox" uid="uid://7ngox4pflp2p" path="res://characters/assets/gradients/down-black-zone-gradient.tres" id="5_fdxy0"]
+[ext_resource type="Script" uid="uid://648cfq8dunfn" path="res://characters/ui/tweens/mouse_hover_color_control.gd" id="9_t5swj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfsc"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kua3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2xlp1"]
+
+[sub_resource type="Gradient" id="Gradient_x4r2e"]
+offsets = PackedFloat32Array(0.13235295, 0.87058824)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e1mmn"]
+gradient = SubResource("Gradient_x4r2e")
+fill = 1
+fill_from = Vector2(0.5, 0.4)
+
 [node name="Character Card Socket" type="PanelContainer" unique_id=1683968349]
 modulate = Color(0.8, 0.8, 0.8, 1)
-custom_minimum_size = Vector2(120, 140)
-offset_right = 120.0
-offset_bottom = 140.0
+custom_minimum_size = Vector2(80, 80)
+offset_right = 76.0
+offset_bottom = 76.0
 theme = ExtResource("1_g82xd")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dgfsc")
+script = ExtResource("2_4du8u")
 
-[node name="Borders" type="PanelContainer" parent="." unique_id=2036350464]
+[node name="Empty Socket" type="PanelContainer" parent="." unique_id=933972085]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2kua3")
+
+[node name="Borders" type="PanelContainer" parent="Empty Socket" unique_id=2036350464]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Background" type="TextureRect" parent="Borders" unique_id=903539954]
+[node name="Background" type="TextureRect" parent="Empty Socket/Borders" unique_id=903539954]
 self_modulate = Color(1, 1, 1, 0.4509804)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_jdneq")
 expand_mode = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=672406802]
+[node name="CenterContainer" type="CenterContainer" parent="Empty Socket/Borders" unique_id=672406802]
 layout_mode = 2
+mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1982315061]
+[node name="TextureRect" type="TextureRect" parent="Empty Socket/Borders/CenterContainer" unique_id=1982315061]
 modulate = Color(1, 1, 1, 0.39215687)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_awecn")
+
+[node name="Occupied Socket" type="PanelContainer" parent="." unique_id=1206456983]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2xlp1")
+
+[node name="Borders" type="PanelContainer" parent="Occupied Socket" unique_id=934650418]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Hover Background" type="TextureRect" parent="Occupied Socket/Borders" unique_id=425255001]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("5_e1mmn")
+expand_mode = 1
+
+[node name="Black Circle Background" type="TextureRect" parent="Occupied Socket/Borders" unique_id=1032141733]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_e1mmn")
+expand_mode = 1
+
+[node name="Portrait" type="TextureRect" parent="Occupied Socket/Borders" unique_id=799611211]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_j1aay")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Name Container" type="PanelContainer" parent="Occupied Socket/Borders" unique_id=1732631248]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_fdxy0")
+
+[node name="Character Name" type="Label" parent="Occupied Socket/Borders/Name Container" unique_id=1042716664]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "ИВАНОВ И. И."
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Occupied Socket" unique_id=1394369489]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="Occupied Socket/MarginContainer" unique_id=164428233]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_0s2ps")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=1687735109]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"EmptyButton"
+
+[node name="MouseHoverColorControl" type="Node" parent="." unique_id=16444051 node_paths=PackedStringArray("mouse_capture", "target")]
+script = ExtResource("9_t5swj")
+mouse_capture = NodePath("../Button")
+target = NodePath("../Occupied Socket/Borders/Hover Background")
+hover_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://648cfq8dunfn"

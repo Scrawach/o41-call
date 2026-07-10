@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://5aden36fntbp"]
+
+[ext_resource type="Script" uid="uid://d00ypqsippjxu" path="res://characters/ui/components/text_ticker.gd" id="1_hxs8u"]
+
+[node name="Control" type="Control" unique_id=118694794]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextTicker" type="Control" parent="." unique_id=1426949590]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hxs8u")
+text = "В случае обнаружения внутри помещения посторонних, занимающихся заражением стен - нажимайте на красную кнопку и выключайте компьютер. В этот момент электронные приборы могут быть нестабильны. Продолжайте работать и следовать инструкции."
+speed = 150.0
+metadata/_custom_type_script = "uid://d00ypqsippjxu"

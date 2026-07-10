@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://w7h5tw71nj7q"]
+
+[ext_resource type="Script" uid="uid://dxl0i3jas8yod" path="res://characters/ui/components/step_progress_bar/progress_bar_item.gd" id="1_iunbr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfsc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiqrc"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[node name="ProgressBar Item" type="PanelContainer" unique_id=278099489]
+custom_minimum_size = Vector2(20, 20)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dgfsc")
+script = ExtResource("1_iunbr")
+
+[node name="Value" type="ColorRect" parent="." unique_id=355174705]
+visible = false
+layout_mode = 2
+
+[node name="Borders" type="PanelContainer" parent="." unique_id=1574060402]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eiqrc")

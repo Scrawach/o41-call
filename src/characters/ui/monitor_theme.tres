@@ -18,6 +18,8 @@ border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kua3"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awt57"]
 draw_center = false
 border_width_left = 2
@@ -41,6 +43,18 @@ Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/styles/hover = SubResource("StyleBoxFlat_x4r2e")
 Button/styles/normal = SubResource("StyleBoxFlat_dgfsc")
+EmptyButton/base_type = &"Button"
+EmptyButton/styles/disabled = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/disabled_mirrored = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/focus = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/hover = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/hover_mirrored = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/hover_pressed = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/normal = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/normal_mirrored = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/pressed = SubResource("StyleBoxEmpty_2kua3")
+EmptyButton/styles/pressed_mirrored = SubResource("StyleBoxEmpty_2kua3")
 Label/fonts/font = ExtResource("1_awt57")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_awt57")
 SolidPanelContainer/base_type = &"PanelContainer"

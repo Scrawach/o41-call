@@ -27,6 +27,7 @@ func disable() -> void:
 	mouse_capture.mouse_entered.disconnect(_on_mouse_entered)
 	mouse_capture.mouse_exited.disconnect(_on_mouse_exited)
 	enabled = false
+	_on_mouse_exited()
 
 func is_enabled() -> bool:
 	return enabled

@@ -4,19 +4,22 @@
 [ext_resource type="Script" uid="uid://41r2ppjba5or" path="res://characters/ui/character_card.gd" id="1_xvsrj"]
 [ext_resource type="Texture2D" uid="uid://b3wp1iii5vn74" path="res://characters/assets/gradients/top-down-gradient.tres" id="2_irfl7"]
 [ext_resource type="Texture2D" uid="uid://c5nl8d86msfp3" path="res://characters/assets/portraits/face-man-0.png" id="3_irfl7"]
-[ext_resource type="Script" uid="uid://v0g7543n3vcp" path="res://characters/ui/mouse_hover_control.gd" id="3_jqdi0"]
-[ext_resource type="Script" uid="uid://648cfq8dunfn" path="res://characters/ui/mouse_hover_color_control.gd" id="4_fdpvi"]
+[ext_resource type="Script" uid="uid://v0g7543n3vcp" path="res://characters/ui/tweens/mouse_hover_scale_control.gd" id="3_jqdi0"]
+[ext_resource type="Script" uid="uid://648cfq8dunfn" path="res://characters/ui/tweens/mouse_hover_color_control.gd" id="4_fdpvi"]
+[ext_resource type="Texture2D" uid="uid://dkqua8pv7jnut" path="res://characters/assets/icons/star-32px.svg" id="5_irfl7"]
+[ext_resource type="StyleBox" uid="uid://7ngox4pflp2p" path="res://characters/assets/gradients/down-black-zone-gradient.tres" id="5_ti4gu"]
+[ext_resource type="FontFile" uid="uid://cqosnypf5rhtj" path="res://characters/assets/fonts/Oswald-Regular.ttf" id="6_dqkge"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfsc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okknv"]
 
-[sub_resource type="Gradient" id="Gradient_x4r2e"]
+[sub_resource type="Gradient" id="Gradient_ti4gu"]
 offsets = PackedFloat32Array(0.13235295, 0.87058824)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_23w8m"]
-gradient = SubResource("Gradient_x4r2e")
+gradient = SubResource("Gradient_ti4gu")
 fill = 1
 fill_from = Vector2(0.5, 0.4)
 
@@ -24,16 +27,6 @@ fill_from = Vector2(0.5, 0.4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okknv"]
 bg_color = Color(1, 1, 1, 0.5882353)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kua3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2xlp1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vi0h0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ff2h1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ljg6"]
 
 [node name="Character Card" type="PanelContainer" unique_id=1819296825]
 custom_minimum_size = Vector2(120, 140)
@@ -106,6 +99,40 @@ theme_override_font_sizes/font_size = 10
 text = "ВЫПОЛНЯЕТ ЗАДАЧУ"
 horizontal_alignment = 1
 
+[node name="Experience Container" type="MarginContainer" parent="PanelContainer/Borders/MarginContainer" unique_id=894003169]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/Borders/MarginContainer/Experience Container" unique_id=1771117569]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("5_ti4gu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Borders/MarginContainer/Experience Container/PanelContainer" unique_id=211865234]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/Borders/MarginContainer/Experience Container/PanelContainer/HBoxContainer" unique_id=2020198767]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_irfl7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/Borders/MarginContainer/Experience Container/PanelContainer/HBoxContainer" unique_id=245813525]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_dqkge")
+theme_override_font_sizes/font_size = 12
+text = "3"
+
 [node name="Name Label" type="Label" parent="PanelContainer/Borders" unique_id=2109326716]
 unique_name_in_owner = true
 layout_mode = 2
@@ -130,11 +157,7 @@ show_percentage = false
 [node name="Button" type="Button" parent="." unique_id=1430972153]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_2kua3")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_2xlp1")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_vi0h0")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ff2h1")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7ljg6")
+theme_type_variation = &"EmptyButton"
 
 [node name="Hover Card Scale Control" type="Node" parent="." unique_id=1396769003 node_paths=PackedStringArray("mouse_capture", "target")]
 script = ExtResource("3_jqdi0")

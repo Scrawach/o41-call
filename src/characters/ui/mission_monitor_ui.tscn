@@ -10,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://bl5nh1c757502" path="res://characters/assets/gradients/down-top-gradient.tres" id="6_8jx30"]
 [ext_resource type="PackedScene" uid="uid://d1fxu0kyj4avj" path="res://characters/ui/components/smooth_button.tscn" id="6_23w8m"]
 [ext_resource type="Script" uid="uid://bg3ivg4fuv6ol" path="res://tests/auto_fill_characters_container.gd" id="7_t8mxs"]
+[ext_resource type="Script" uid="uid://cxvo253i37nvm" path="res://characters/mission_character_setup.gd" id="7_yyyby"]
 [ext_resource type="Script" uid="uid://vkkm85try0h5" path="res://characters/resources/character_data.gd" id="8_23w8m"]
 [ext_resource type="Resource" uid="uid://rtahaiotoelk" path="res://characters/resources/test_character.tres" id="9_23w8m"]
+[ext_resource type="Script" uid="uid://brurjaj03l1ri" path="res://characters/attach_character_to_mission.gd" id="13_k3kb1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkblp"]
 
@@ -94,24 +96,57 @@ layout_mode = 2
 alignment = 2
 
 [node name="Text Ticker" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=126669045 instance=ExtResource("2_yjd1a")]
+visible = false
 layout_mode = 2
 text = "В случае обнаружения внутри помещения посторонних, занимающихся заражением стен - нажимайте на красную кнопку и выключайте компьютер. В этот момент электронные приборы могут быть нестабильны. Продолжайте работать и следовать инструкции."
 spacing = 25.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=825353070]
-visible = false
 layout_mode = 2
-size_flags_horizontal = 8
-alignment = 2
+size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=394915426]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=1139951303]
+modulate = Color(1, 1, 1, 0.54901963)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_lrukk")
-theme_override_font_sizes/font_size = 12
-text = "СВЯЗЬ В НОРМЕ "
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "контроль объектов неизвестного типа и условной реальности - терминал управления аварийной службы - объект о41-п471 // внутреняя сеть"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=1410894980]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/HBoxContainer" unique_id=657416829]
+modulate = Color(1, 1, 1, 0.54901963)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "секретно // уровень допуска: 1б"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="Label3" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/HBoxContainer" unique_id=1850519629]
+modulate = Color(1, 1, 1, 0.54901963)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "14:37:28"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="Label4" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/HBoxContainer" unique_id=6634875]
+modulate = Color(1, 1, 1, 0.54901963)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "27.05.1996"
+horizontal_alignment = 2
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=180120612]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=954304344]
 layout_mode = 2
@@ -201,26 +236,27 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2" unique_id=1732071825]
+[node name="Mission Character Setup" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2" unique_id=1732071825]
+layout_mode = 2
+script = ExtResource("7_yyyby")
+socket_scene = ExtResource("6_0vh2y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/Mission Character Setup" unique_id=1669748448]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=540992085]
+[node name="Group Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/Mission Character Setup/HBoxContainer" unique_id=540992085]
 layout_mode = 2
-text = "ГРУППА: [0/4]"
+size_flags_horizontal = 3
+text = "ГРУППА:"
+uppercase = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1138936133]
+[node name="Group Count" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/Mission Character Setup/HBoxContainer" unique_id=2142551141]
 layout_mode = 2
+size_flags_horizontal = 10
+text = "[0/4]"
+uppercase = true
 
-[node name="Character Card Socket" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1964401191 instance=ExtResource("6_0vh2y")]
-layout_mode = 2
-
-[node name="Character Card Socket2" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=316769494 instance=ExtResource("6_0vh2y")]
-layout_mode = 2
-
-[node name="Character Card Socket3" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=483367130 instance=ExtResource("6_0vh2y")]
-layout_mode = 2
-
-[node name="Character Card Socket4" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer" unique_id=1437987777 instance=ExtResource("6_0vh2y")]
+[node name="Socket Container" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/Mission Character Setup" unique_id=1138936133]
 layout_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer" unique_id=534579487]
@@ -249,7 +285,6 @@ text = "назад"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1177107050]
 layout_mode = 2
-size_flags_vertical = 3
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 scroll_horizontal_by_default = true
@@ -274,3 +309,9 @@ script = ExtResource("7_t8mxs")
 data = Array[ExtResource("8_23w8m")]([ExtResource("9_23w8m"), ExtResource("9_23w8m"), ExtResource("9_23w8m")])
 character_card_scene = ExtResource("1_vkblp")
 metadata/_custom_type_script = "uid://bg3ivg4fuv6ol"
+
+[node name="AttachCharacterToMission" type="Node" parent="." unique_id=1941457168 node_paths=PackedStringArray("character_container", "mission_setup")]
+script = ExtResource("13_k3kb1")
+character_container = NodePath("../MarginContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/AutoFillCharactersContainer")
+mission_setup = NodePath("../MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/MarginContainer/HBoxContainer/Setup Character Panel/VBoxContainer/MarginContainer2/Mission Character Setup")
+metadata/_custom_type_script = "uid://brurjaj03l1ri"

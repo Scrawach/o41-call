@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dbw8se6eu1tcy"]
+
+[ext_resource type="Texture2D" uid="uid://bxvdsacs2yvic" path="res://characters/resources/assets/expertise-icon-32px.png" id="1_gmbq7"]
+[ext_resource type="Script" uid="uid://duntilou4oen2" path="res://characters/resources/stats/ui/radar_stat_panel.gd" id="1_ol0hi"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dgfsc"]
+blend_mode = 1
+
+[node name="Radar Stat Panel" type="PanelContainer" unique_id=1202713146]
+offset_right = 116.0
+offset_bottom = 28.0
+mouse_filter = 2
+script = ExtResource("1_ol0hi")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=717752950]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=707628531]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=299398124]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_dgfsc")
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("1_gmbq7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1168555919]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "экспертиза"
+uppercase = true

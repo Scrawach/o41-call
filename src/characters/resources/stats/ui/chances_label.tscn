@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cfueu0rrrv2id"]
+
+[ext_resource type="Theme" uid="uid://cssn1p1dxinea" path="res://characters/ui/monitor_theme.tres" id="1_xsmfs"]
+[ext_resource type="Script" uid="uid://dtgbc5ti3fi6m" path="res://characters/resources/stats/ui/chances_label.gd" id="2_364v1"]
+
+[node name="Chances Label" type="PanelContainer" unique_id=2123780886]
+custom_minimum_size = Vector2(60, 0)
+offset_right = 60.0
+offset_bottom = 23.0
+theme = ExtResource("1_xsmfs")
+script = ExtResource("2_364v1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=625607870]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=78706910]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1

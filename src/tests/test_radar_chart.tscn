@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b6087ia6t8dk1"]
+
+[ext_resource type="Script" uid="uid://bsmtlaum681ns" path="res://tests/test_radar_chart.gd" id="1_h05s3"]
+[ext_resource type="PackedScene" uid="uid://cfoow5byh82vt" path="res://characters/resources/stats/ui/group_radar_chart.tscn" id="2_h05s3"]
+[ext_resource type="Script" uid="uid://0g4tih26htln" path="res://characters/resources/stats/stats.gd" id="3_x4cxc"]
+[ext_resource type="Script" uid="uid://dyxqm73wxf0wa" path="res://characters/resources/stats/ui/radar_chart_resource.gd" id="4_dtyyn"]
+[ext_resource type="PackedScene" uid="uid://cfueu0rrrv2id" path="res://characters/resources/stats/ui/chances_label.tscn" id="5_71e7q"]
+
+[sub_resource type="Resource" id="Resource_h05s3"]
+script = ExtResource("3_x4cxc")
+liqudation = 1
+isolation = 1
+expertise = 5
+metadata/_custom_type_script = "uid://0g4tih26htln"
+
+[sub_resource type="Resource" id="Resource_x4cxc"]
+script = ExtResource("3_x4cxc")
+liqudation = 3
+isolation = 3
+expertise = 3
+metadata/_custom_type_script = "uid://0g4tih26htln"
+
+[sub_resource type="Resource" id="Resource_dtyyn"]
+script = ExtResource("4_dtyyn")
+metadata/_custom_type_script = "uid://dyxqm73wxf0wa"
+
+[node name="Control" type="Control" unique_id=1104425974]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h05s3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=560245934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Group RadarChart" parent="." unique_id=235930962 instance=ExtResource("2_h05s3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -533.0
+offset_top = -630.0
+offset_right = -259.0
+offset_bottom = -354.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 10.0
+display_stat = SubResource("Resource_h05s3")
+show_requirements = true
+requirements_stat = SubResource("Resource_x4cxc")
+config = SubResource("Resource_dtyyn")
+
+[node name="Mission RadarChart" type="Control" parent="." unique_id=1936856247]
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 294.0
+
+[node name="Chances Label" parent="." unique_id=2123780886 instance=ExtResource("5_71e7q")]
+layout_mode = 0

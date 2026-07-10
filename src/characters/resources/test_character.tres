@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://vkkm85try0h5" path="res://characters/resources/character_data.gd" id="1_2bo15"]
 [ext_resource type="Texture2D" uid="uid://c5nl8d86msfp3" path="res://characters/assets/portraits/face-man-0.png" id="1_yjsr8"]
+[ext_resource type="Script" uid="uid://0g4tih26htln" path="res://characters/resources/stats/stats.gd" id="3_fme1f"]
+
+[sub_resource type="Resource" id="Resource_yyyby"]
+script = ExtResource("3_fme1f")
+liqudation = 1
+isolation = 1
+expertise = 1
+metadata/_custom_type_script = "uid://0g4tih26htln"
 
 [resource]
 script = ExtResource("1_2bo15")
 id = "test-char"
 name = "Иванов И. И."
 portrait = ExtResource("1_yjsr8")
+stats = SubResource("Resource_yyyby")
 metadata/_custom_type_script = "uid://vkkm85try0h5"

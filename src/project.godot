@@ -30,7 +30,10 @@ directories/dch_directory={
 directories/dtl_directory={
 "00test": "res://scenarios/dialogues/00test.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://scenarios/dialogues/dialogue_panel.tres",
+"dialogue_panel": "res://scenarios/dialogues/dialogue_panel.tres"
+}
 layout/style_list=["res://scenarios/dialogues/dialogue_panel.tres"]
 layout/default_style="res://scenarios/dialogues/dialogue_panel.tres"
 

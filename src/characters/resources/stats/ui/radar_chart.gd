@@ -90,8 +90,14 @@ func _draw_radar(center: Vector2, content: Vector3, max_radius: int, color: Colo
 	var stat_contour = PackedVector2Array([p_liquidation, p_isolation, p_expertise, p_liquidation])
 	draw_polyline(stat_contour, contour_color, 2.0, true)
 	
+	var values = [content.x, content.y, content.z]
+	var i := 0
 	for point in stat_points:
-		draw_circle(point, 2, contour_color, true, -1.0, true)
+		draw_circle(point, 6, contour_color, true, -1.0, true)
+		var value := str(roundi(values[i]))
+		var char_font_size := 8
+		draw_char(config.font, point - Vector2(2, -4), value, char_font_size, Color.BLACK)
+		i += 1
 
 func _animate_stats() -> void:
 	if Engine.is_editor_hint():

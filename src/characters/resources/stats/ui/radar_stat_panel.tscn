@@ -16,7 +16,9 @@ script = ExtResource("1_ol0hi")
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=707628531]
 layout_mode = 2

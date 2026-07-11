@@ -32,7 +32,6 @@ mouse_filter = 2
 theme = ExtResource("1_cixku")
 script = ExtResource("2_dds2c")
 display_stat = SubResource("Resource_x4cxc")
-show_requirements = null
 requirements_stat = SubResource("Resource_dtyyn")
 config = SubResource("Resource_71e7q")
 metadata/_custom_type_script = "uid://dwo0fiodpex0p"

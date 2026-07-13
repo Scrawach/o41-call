@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dbw8se6eu1tcy" path="res://characters/resources/stats/ui/radar_stat_panel.tscn" id="3_r8uxg"]
 [ext_resource type="Texture2D" uid="uid://fc0k0x06jhk7" path="res://characters/resources/assets/liqudation-icon-32px.png" id="4_0clor"]
 [ext_resource type="Script" uid="uid://dyxqm73wxf0wa" path="res://characters/resources/stats/ui/radar_chart_resource.gd" id="4_r8uxg"]
+[ext_resource type="FontFile" uid="uid://wvotaipmcy7m" path="res://characters/assets/fonts/Oswald-Bold.ttf" id="4_t2vt8"]
 [ext_resource type="Texture2D" uid="uid://chemx0uhsl3i6" path="res://characters/resources/assets/isolation-icon-32px.png" id="5_t2vt8"]
 [ext_resource type="Texture2D" uid="uid://bxvdsacs2yvic" path="res://characters/resources/assets/expertise-icon-32px.png" id="6_nlqvj"]
 
@@ -19,6 +20,7 @@ metadata/_custom_type_script = "uid://0g4tih26htln"
 
 [sub_resource type="Resource" id="Resource_71e7q"]
 script = ExtResource("4_r8uxg")
+font = ExtResource("4_t2vt8")
 metadata/_custom_type_script = "uid://dyxqm73wxf0wa"
 
 [node name="Group RadarChart" type="Control" unique_id=235930962]
@@ -26,39 +28,52 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 33.0
 offset_top = 14.0
-offset_right = 307.0
-offset_bottom = 290.0
+offset_right = 283.0
+offset_bottom = 264.0
 mouse_filter = 2
 theme = ExtResource("1_cixku")
 script = ExtResource("2_dds2c")
+center_offset = Vector2(0, -25)
 display_stat = SubResource("Resource_x4cxc")
 requirements_stat = SubResource("Resource_dtyyn")
 config = SubResource("Resource_71e7q")
 metadata/_custom_type_script = "uid://dwo0fiodpex0p"
 
 [node name="Radar Stat Panel" parent="." unique_id=1202713146 instance=ExtResource("3_r8uxg")]
-layout_mode = 0
-offset_left = 80.0
-offset_top = -14.0
-offset_right = 196.0
-offset_bottom = 14.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_right = 58.0
+offset_bottom = 34.0
+grow_horizontal = 2
 display_name = "ликвидация"
 display_texture = ExtResource("4_0clor")
 
 [node name="Radar Stat Panel2" parent="." unique_id=1648337730 instance=ExtResource("3_r8uxg")]
-layout_mode = 0
-offset_left = 194.0
-offset_top = 205.0
-offset_right = 310.0
-offset_bottom = 233.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -34.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
 display_name = "изоляция"
 display_texture = ExtResource("5_t2vt8")
 
 [node name="Radar Stat Panel3" parent="." unique_id=498230505 instance=ExtResource("3_r8uxg")]
-layout_mode = 0
-offset_left = -33.0
-offset_top = 205.0
-offset_right = 83.0
-offset_bottom = 233.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_bottom = 0.0
+grow_vertical = 0
 display_name = "экспертиза"
 display_texture = ExtResource("6_nlqvj")

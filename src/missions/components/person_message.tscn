@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bm8mnj0ythpmg"]
+
+[ext_resource type="Theme" uid="uid://cssn1p1dxinea" path="res://characters/ui/monitor_theme.tres" id="1_di5ra"]
+[ext_resource type="Script" uid="uid://1cjyjeqc24rt" path="res://missions/components/person_message.gd" id="1_n21jr"]
+
+[node name="Person Message" type="HBoxContainer" unique_id=2034497026]
+offset_right = 300.0
+offset_bottom = 69.0
+theme = ExtResource("1_di5ra")
+theme_override_constants/separation = 12
+script = ExtResource("1_n21jr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1327149678]
+layout_mode = 2
+theme_override_constants/separation = -6
+
+[node name="Person Label" type="Label" parent="VBoxContainer" unique_id=497301218]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+custom_maximum_size = Vector2(90, -1)
+layout_mode = 2
+size_flags_vertical = 0
+text = "иванов и. и."
+text_overrun_behavior = 5
+uppercase = true
+
+[node name="Small Description" type="Label" parent="VBoxContainer" unique_id=572982468]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.7058824)
+custom_minimum_size = Vector2(90, 0)
+custom_maximum_size = Vector2(90, -1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "изолятор"
+text_overrun_behavior = 5
+
+[node name="Message Label" type="Label" parent="." unique_id=1440196758]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.78431374)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_type_variation = &"NormalLabel"
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 12
+text = "приём! ничерта не видно! требуется оборудование! ав ыаы в ы вы а в ы ва ыва ы в ыаыв аы в аы!"
+autowrap_mode = 3
+uppercase = true

@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://cgh0dub30phki"]
+
+[ext_resource type="Theme" uid="uid://cssn1p1dxinea" path="res://characters/ui/monitor_theme.tres" id="1_a8wat"]
+[ext_resource type="PackedScene" uid="uid://b7jphkl3fe8ij" path="res://missions/journal.tscn" id="2_mqgvs"]
+[ext_resource type="Texture2D" uid="uid://bl5nh1c757502" path="res://characters/assets/gradients/down-top-gradient.tres" id="2_utbhd"]
+[ext_resource type="PackedScene" uid="uid://fs0akq8o2q6y" path="res://scenarios/dialogues/dialogue_panel.tscn" id="4_4b2rv"]
+[ext_resource type="PackedScene" uid="uid://pd2xno7e255k" path="res://characters/ui/character_card.tscn" id="5_faheu"]
+[ext_resource type="PackedScene" uid="uid://cfoow5byh82vt" path="res://characters/resources/stats/ui/group_radar_chart.tscn" id="5_utbhd"]
+[ext_resource type="Script" uid="uid://0g4tih26htln" path="res://characters/resources/stats/stats.gd" id="6_mqgvs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfsc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eiqrc"]
+
+[sub_resource type="Resource" id="Resource_utbhd"]
+script = ExtResource("6_mqgvs")
+liqudation = 2
+isolation = 3
+expertise = 4
+metadata/_custom_type_script = "uid://0g4tih26htln"
+
+[node name="Misson Control UI" type="Control" unique_id=2112915515]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a8wat")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=769292591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=48744083]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=166047802]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1371797648]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1844679528]
+layout_mode = 2
+
+[node name="Journal" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=278825156 instance=ExtResource("2_mqgvs")]
+layout_mode = 2
+
+[node name="Tactics" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=941680062]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dgfsc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics" unique_id=1035699694]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer" unique_id=2043834096]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Dialogue Panel" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer" unique_id=868862318 instance=ExtResource("4_4b2rv")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer" unique_id=1864239131]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer/PanelContainer" unique_id=797561622]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=132683458]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eiqrc")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=1120872286]
+layout_mode = 2
+text = "тактическая сводка"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=378246486]
+modulate = Color(1, 1, 1, 0.41960785)
+layout_mode = 2
+texture = ExtResource("2_utbhd")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=411882745]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1862982199]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Group RadarChart" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=235930962 instance=ExtResource("5_utbhd")]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 4
+display_stat = SubResource("Resource_utbhd")
+
+[node name="Current Group Panel" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer" unique_id=1987155993]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel" unique_id=747625602]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer" unique_id=546030665]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer/VBoxContainer" unique_id=393149905]
+layout_mode = 2
+theme_type_variation = &"NormalLabel"
+theme_override_font_sizes/font_size = 12
+text = "состав передовой группы:"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer/VBoxContainer" unique_id=237225172]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Character Card" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1819296825 instance=ExtResource("5_faheu")]
+layout_mode = 2
+
+[node name="Character Card2" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=276947940 instance=ExtResource("5_faheu")]
+layout_mode = 2
+
+[node name="Character Card3" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=193367534 instance=ExtResource("5_faheu")]
+layout_mode = 2
+
+[node name="Character Card4" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1768741743 instance=ExtResource("5_faheu")]
+layout_mode = 2
+
+[node name="Character Card5" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=461067597 instance=ExtResource("5_faheu")]
+layout_mode = 2
+
+[node name="Character Card6" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Tactics/VBoxContainer/Current Group Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=940921961 instance=ExtResource("5_faheu")]
+layout_mode = 2

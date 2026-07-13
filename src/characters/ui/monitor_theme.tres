@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cssn1p1dxinea"]
 
 [ext_resource type="FontFile" uid="uid://bm4qh31edg80b" path="res://characters/assets/fonts/Oswald-Medium.ttf" id="1_awt57"]
+[ext_resource type="FontFile" uid="uid://cqosnypf5rhtj" path="res://characters/assets/fonts/Oswald-Regular.ttf" id="2_vo5h2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4r2e"]
 bg_color = Color(1, 1, 1, 1)
@@ -20,6 +21,11 @@ border_blend = true
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kua3"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2tobx"]
+color = Color(1, 1, 1, 1)
+grow_begin = 2.0
+grow_end = 2.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awt57"]
 draw_center = false
 border_width_left = 2
@@ -38,6 +44,15 @@ border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo5h2"]
+bg_color = Color(1, 1, 1, 0.78431374)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbg8h"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2r3cw"]
+bg_color = Color(1, 1, 1, 0.627451)
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
@@ -55,7 +70,14 @@ EmptyButton/styles/normal = SubResource("StyleBoxEmpty_2kua3")
 EmptyButton/styles/normal_mirrored = SubResource("StyleBoxEmpty_2kua3")
 EmptyButton/styles/pressed = SubResource("StyleBoxEmpty_2kua3")
 EmptyButton/styles/pressed_mirrored = SubResource("StyleBoxEmpty_2kua3")
+HSeparator/constants/separation = 0
+HSeparator/styles/separator = SubResource("StyleBoxLine_2tobx")
 Label/fonts/font = ExtResource("1_awt57")
+NormalLabel/base_type = &"Label"
+NormalLabel/fonts/font = ExtResource("2_vo5h2")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_awt57")
 SolidPanelContainer/base_type = &"PanelContainer"
 SolidPanelContainer/styles/panel = SubResource("StyleBoxFlat_t8mxs")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_vo5h2")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_qbg8h")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_2r3cw")

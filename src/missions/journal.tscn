@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b7jphkl3fe8ij"]
+
+[ext_resource type="Texture2D" uid="uid://bl5nh1c757502" path="res://characters/assets/gradients/down-top-gradient.tres" id="1_5wfpr"]
+[ext_resource type="Script" uid="uid://je0n5l1n7fng" path="res://missions/journal.gd" id="1_y0dhg"]
+[ext_resource type="PackedScene" uid="uid://bm8mnj0ythpmg" path="res://missions/components/person_message.tscn" id="2_y0dhg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eiqrc"]
+
+[node name="Journal" type="PanelContainer" unique_id=278825156]
+custom_minimum_size = Vector2(300, 200)
+script = ExtResource("1_y0dhg")
+phrase_scene = ExtResource("2_y0dhg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=792643999]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=198278099]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eiqrc")
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer" unique_id=2071169059]
+layout_mode = 2
+text = "журнал событий"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer" unique_id=1087638138]
+modulate = Color(1, 1, 1, 0.41960785)
+layout_mode = 2
+texture = ExtResource("1_5wfpr")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=392304676]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=833779189]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer" unique_id=925282421]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer" unique_id=640486703]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3

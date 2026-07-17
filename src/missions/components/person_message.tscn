@@ -46,3 +46,4 @@ theme_override_font_sizes/font_size = 12
 text = "приём! ничерта не видно! требуется оборудование! ав ыаы в ы вы а в ы ва ыва ы в ыаыв аы в аы!"
 autowrap_mode = 3
 uppercase = true
+visible_characters_behavior = 1

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://f6b1a2jvgk2g"]
 
-[ext_resource type="PackedScene" uid="uid://dqwgvhqja4eh5" path="res://workplace/devices/computer.tscn" id="1_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dqwgvhqja4eh5" path="res://workplace/computer/computer.tscn" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bxqjni8eaba1d" path="res://workplace/city/city.tscn" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://ctrmu4hf1p8os" path="res://workplace/journal/journal.tscn" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://delecmofkykty" path="res://player/player.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dmju8u2cbo3pj" path="res://workplace/room.blend" id="5_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -13,7 +14,7 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_ig7tw")
 
 [sub_resource type="BoxMesh" id="BoxMesh_dgfsc"]
@@ -24,14 +25,17 @@ size = Vector3(2.4, 1, 1.2)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=25665988]
 environment = SubResource("Environment_0xm2m")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=580251931]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment" unique_id=997125382]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.9074898, 0)
+spot_range = 4.215
+spot_attenuation = 2.1
+spot_angle = 35.77
 
 [node name="Workplace" type="Node3D" parent="." unique_id=1822689884]
 
 [node name="Table" type="MeshInstance3D" parent="Workplace" unique_id=828755010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49860114, 0)
+visible = false
 mesh = SubResource("BoxMesh_dgfsc")
 
 [node name="Computer" parent="Workplace/Table" unique_id=245178674 instance=ExtResource("1_5vw27")]
@@ -44,3 +48,6 @@ transform = Transform3D(-0.25654855, 0, -0.96653134, 0, 1, 0, 0.96653134, 0, -0.
 transform = Transform3D(0.0023499266, 0, -0.9999972, 0, 1, 0, 0.9999972, 0, 0.0023499266, 0.041838408, 0.5140036, 0.386406)
 
 [node name="Player" parent="Workplace" unique_id=872856807 instance=ExtResource("4_1bvp3")]
+
+[node name="room" parent="Workplace" unique_id=1561708858 instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22487801, 0)
